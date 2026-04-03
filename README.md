@@ -5,7 +5,45 @@ Two scripts — pick the one matching your GPU.
 
 ---
 
-## Which script to use?
+## All Scripts
+
+| Script | Purpose |
+|--------|---------|
+| `start-ai.sh` | Start / stop Gemma 4 + MCP web search together |
+| `gemma.sh` | Gemma 4 server — RTX 5070 / Blackwell |
+| `gemma_2060.sh` | Gemma 4 server — RTX 2060 / Turing (includes install) |
+| `llama-cpp-install.sh` | Build llama.cpp with CUDA — RTX 50 series |
+| `llama-cpp-install-2060.sh` | Build llama.cpp with CUDA — RTX 20 series |
+
+---
+
+## start-ai.sh — Start Everything at Once
+
+Starts both Gemma 4 and MCP web search with a single command.
+
+```bash
+chmod +x start-ai.sh
+./start-ai.sh              # start both (MCP on port 8090)
+./start-ai.sh start 9000   # start with custom MCP port
+./start-ai.sh stop         # stop both
+./start-ai.sh restart      # restart both
+./start-ai.sh status       # status of both services
+./start-ai.sh logs         # tail both logs live
+```
+
+Once running:
+
+| Service | URL |
+|---------|-----|
+| Gemma 4 Web UI | http://localhost:8080 |
+| Gemma 4 API (OpenAI) | http://localhost:8080/v1 |
+| MCP Web Search | http://localhost:8090/mcp |
+
+> Note: `mcp_websearch.sh` must be in the same directory for `start-ai.sh` to find it.
+
+---
+
+## Which gemma script to use?
 
 | Script | GPU | VRAM | CUDA Arch |
 |--------|-----|------|-----------|
