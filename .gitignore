@@ -1,0 +1,11 @@
+# Runtime files — auto-created, do not commit
+.mcp-venv/
+.proxy.pid
+.proxy.log
+.llama-server.pid
+.llama-server.log
+.mcp-websearch.pid
+.mcp-websearch.log
+.searxng/
+__pycache__/
+*.pyc
